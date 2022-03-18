@@ -22,7 +22,13 @@ public class YoungPhysicist {
         }
     }
 
-    public String isEquilibrium(int[] forces) {
+    public String isEquilibrium(int[][] values) {
+        int[] forces = {0, 0, 0};
+        for(int i = 0; i < values.length; i++) {
+            forces[0] += values[i][0];
+            forces[1] += values[i][1];
+            forces[2] += values[i][2];
+        }
         if(forces[0] != 0 || forces[1] != 0 || forces[2] != 0 ) {
             return "NO";
         } else {
